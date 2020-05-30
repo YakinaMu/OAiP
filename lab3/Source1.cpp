@@ -1,49 +1,39 @@
-#include <Windows.h>
 #include <iostream>
 using namespace std;
 
-void division(float);
+void ru();
 
-void pow(float);
+void eng();
 
-void sum(float);
-
+void deut();
 
 int main()
 {
-	setlocale(LC_ALL, "ru");
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+setlocale(LC_ALL, "ru");
 
-	void(*arr[3])(float) = { division,pow,sum };
-	cout << "1.Деление двух чисел\n";
-	cout << "2.Возведение в степень\n";
-	cout << "3.Сумма двух чисел\n";
-	cout << "  Какую из трех функций выбрать?\n ";
-	int my_choose;
-	cin >> my_choose;
-	my_choose--;
-	(*arr[my_choose])(my_choose);
-	return 0;
+void (*arr[3])() = { ru,eng,deut };
+cout << "1.Р СѓСЃСЃРєРёР№\n";
+cout << "2.РђРЅРіР»РёР№СЃРєРёР№\n";
+cout << "3.РќРµРјРµС†РєРёР№\n";
+cout << " РљР°РєСѓСЋ РёР· С‚СЂРµС… С„СѓРЅРєС†РёР№ РІС‹Р±СЂР°С‚СЊ?\n ";
+
+int my_choose;
+cin >> my_choose;
+my_choose--;
+(*arr[my_choose])();
+
+return 0;
+
 }
-void division(float)
+void ru()
 {
-	cout << "Введите два числа: \n";
-	int a, b;
-	cin >> a >> b;
-	cout << "Результат равен: " << a / b;
+cout << "РџСЂРёРІРµС‚ РјРёСЂ\n";
 }
-void pow(float)
+void eng()
 {
-	cout << "Введите два числа: \n";
-	int a, b;
-	cin >> a >> b;
-	cout << "Результат равен: " << pow(a, b);
+cout << "Hello world \n";
 }
-void sum(float)
+void deut()
 {
-	cout << "Введите два числа: \n";
-	int a, b;
-	cin >> a >> b;
-	cout << "Результат равен: " << a + b;
+cout << "Hallo welt \n";
 }
